@@ -1,8 +1,8 @@
 import React from 'react';
 import classes from './styles/Projects.module.scss';
-import projectBrocolioCipher from "./img/project_brocolio-cipher.jpg";
-import projectTravelly from "./img/project_travelly.jpg";
-import projectBrocolioCalculator from "./img/project_brocolio-calculator.jpg";
+import projectBrocolioCipher from "/src/img/project_brocolio-cipher.jpg";
+import projectTravelly from "/src/img/project_travelly.jpg";
+import projectBrocolioCalculator from "/src/img/project_brocolio-calculator.jpg";
 
 export default function Projects() {
   return (
