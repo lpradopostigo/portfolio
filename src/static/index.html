@@ -7,15 +7,67 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link
-    href="https://fonts.googleapis.com/css2?family=Oxanium:wght@400;500&family=Quicksand:wght@400;500&family=Roboto:wght@300;400;500&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Oxanium:wght@300&family=Quicksand:wght@400;500;600&family=Raleway:wght@300;400;500&display=swap"
     rel="stylesheet">
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
   <title>Luis Prado's Portfolio</title>
 </head>
 
-<body>
-  <div id="root"></div>
+<body class="bg-gray-100 text-black font-sans">
+  <nav class="w-full mx-auto text-white top-0 sticky z-10">
+    <ul class="flex items-center justify-around flex-wrap p-5">
+      <li><a href="">Start</a></li>
+      <li><a href="">Projects</a></li>
+      <li><a href="">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section id="start" class="min-h-screen">
+      <div class="bg-hero bg-cover bg-center bg-fixed w-full h-full absolute top-0 -z-10"></div>
+      <header class="text-center py-20 text-white">
+        <h1 class="text-yellow-300 text-xl uppercase font-display">
+          Luis Angel <br />
+          Prado Postigo
+        </h1>
+        <h2 class="font-display-alt font-light uppercase">software developer</h2>
+      </header>
+    </section>
+    <section id="projects" class="w-full box-content ">
+      <project-card class="w-4/5 bg-white mx-auto my-10"
+        repositoryhref="https://github.com/lprapopostigo/brocolio-cipher.git"
+        websitehref="https://brocolio-cipher.netlify.app">
+        <img slot=thumbnail src="/src/assets/project_brocolio-cipher.jpg" alt="">
+        <h1 slot=title>Brocolio Cipher</h1>
+        <p slot=description>
+          Client-side image cipher tool, algorithm written in Rust and brought to the web using Web Assembly.
+        </p>
+      </project-card>
+
+      <project-card class="w-4/5 bg-white mx-auto my-10"
+        repositoryhref="https://github.com/lprapopostigo/brocolio-cipher.git"
+        websitehref="https://brocolio-cipher.netlify.app">
+        <img slot=thumbnail src="/src/assets/project_travelly.jpg" alt="">
+        <h1 slot=title>Travelly</h1>
+        <p slot=description>
+          Client-side image cipher tool, algorithm written in Rust and brought to the web using Web Assembly.
+        </p>
+      </project-card>
+
+      <project-card class="w-4/5 bg-white mx-auto my-10"
+        repositoryhref="https://github.com/lprapopostigo/brocolio-cipher.git"
+        websitehref="https://brocolio-cipher.netlify.app">
+        <img slot=thumbnail src="/src/assets/project_brocolio-calculator.jpg" alt="">
+        <h1 slot=title>Brocolio Cipher</h1>
+        <p slot=description>
+          Client-side image cipher tool, algorithm written in Rust and brought to the web using Web Assembly.
+        </p>
+      </project-card>
+    </section>
+
+  </main>
+
+  <!-- <div id="root"></div> -->
 </body>
 
 
