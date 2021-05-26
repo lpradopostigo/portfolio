@@ -2,4 +2,7 @@
   /* background-image: url("/src/assets/hero.jpg"); */
 
 @layer components {
+  .carousel-container {
+    @apply bg-gray-200 w-min rounded-md p-2;
+  }
 }

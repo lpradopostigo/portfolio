@@ -4,73 +4,74 @@ import { LitElement, html, css } from 'lit';
 export class ProjectCard extends LitElement {
   static get styles() {
     return css`
+      :host{
+        display: block;
+      }
 
-        :host{
-          display: block;
-        }
-       .card{
-        border-radius: 0.375rem;
+      .card{
+      border-radius: 0.375rem;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+      }
+
+      .thumbnail-container{
+        height: 14rem;
+        width:100%;
         overflow: hidden;
+        position: relative;
+      }
+
+      ::slotted(img){
+        object-fit: cover;
+        object-position: center;
+        max-height: 100%;
+        min-height: 100%;
+        width:100%;
+        transition: all 1s;
+
+      }
+
+      .links{
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,.5);
+        position: absolute;
+        top: 100%;
+        transition: all .5s;
         display: flex;
-        flex-direction: column;
         align-items: center;
-        box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-       }
+        justify-content:space-evenly;
+      }
 
-       .thumbnail-container{
-         height: 18rem;
-         width:100%;
-         overflow: hidden;
-         position: relative;
-       }
+      slot[name=title]{
+      font-size: 1.125rem;
+      line-height: 1.75rem;
+      font-weight: 600;
+      font-family: Quicksand, sans-serif;
+      }
 
-       ::slotted(img){
-         object-fit: cover;
-         object-position: center;
-         max-height: 100%;
-         width:100%;
-         transition: all .5s;
+      .details{
+      padding-left: 2.5rem;
+      padding-right: 2.5rem;
+      padding-top: 1.25rem;
+      padding-bottom: 1.25rem;
+      }
 
-       }
+      .button{
+      border-width: 1px;
+      padding: 0.25rem;
+      text-decoration: none;
+      border-style: solid;
+      border-color: rgba(255, 255, 255, 1);
+      color: rgba(255, 255, 255, 1);
 
-       .links{
-         width: 100%;
-         height: 100%;
-         background-color: rgba(0,0,0,.6);
-         position: absolute;
-         top: 100%;
-         transition: all .5s;
-         display: flex;
-         align-items: center;
-         justify-content:space-evenly;
-       }
-
-       slot[name=title]{
-        font-size: 1.125rem;
-        line-height: 1.75rem;
-        font-weight: 600;
-        font-family: Quicksand, sans-serif;
-       }
-
-       .details{
-        padding-left: 2.5rem;
-        padding-right: 2.5rem;
-        padding-top: 1.25rem;
-        padding-bottom: 1.25rem;
-       }
-
-       .button{
-        border-width: 1px;
-        padding: 0.25rem;
-        text-decoration: none;
-        border-style: solid;
-        border-color: rgba(255, 255, 255, 1);
-        color: rgba(255, 255, 255, 1);
-
-       }
-       .button:hover{
-        background-color: rgba(37, 99, 235, 1);
-       }
+      }
+      .button:hover{
+      background-color: rgb(219, 39, 119);
+      }
      `;
   }
 
@@ -83,18 +84,20 @@ export class ProjectCard extends LitElement {
 
   constructor() {
     super();
+    this.touched = false;
   }
 
   render() {
     return html`
       <div class="card">
-        <div class="thumbnail-container" @mouseenter=${this._showLinks} @mouseleave=${this._hideLinks}>
+        <div class="thumbnail-container" @mouseenter=${this._showLinks} @mouseleave=${this._hideLinks}
+          @touchstart=${this._toggleLinks}>
           <slot name=thumbnail></slot>
           <div class="links">
             ${this.repositoryHref ? html`<a class="button" href=${this.repositoryHref} target="_blank"
-              rel="noreferrer noopener">Repository</a>` : null}
-            ${this.websiteHref ? html`<a class="button" href=${this.websiteHref} target="_blank"
-              rel="noreferrer noopener">Website</a>` : null}
+              rel="noreferrer noopener" @touchstart=${(e) => { e.stopPropagation(); }}>Repository</a>` : null}
+            ${this.websiteHref ? html`<a class="button" href=${this.websiteHref} target="_blank" rel="noreferrer noopener"
+              @touchstart=${(e) => { e.stopPropagation(); }}>Website</a>` : null}
           </div>
         </div>
         <div class="details">
@@ -120,6 +123,22 @@ export class ProjectCard extends LitElement {
     thumbnail.style.transform = "scale(1)";
     links.style.transform = "translateY(100%)";
 
+
+  }
+
+  _toggleLinks(e) {
+    console.log(e.target);
+    const thumbnail = this.shadowRoot.querySelector("slot[name=thumbnail]").assignedNodes()[0];
+    const links = this.shadowRoot.querySelector(".links");
+    if (!this.touched) {
+      thumbnail.style.transform = "scale(1.2)";
+      links.style.transform = "translateY(-100%)";
+    }
+    else {
+      thumbnail.style.transform = "scale(1)";
+      links.style.transform = "translateY(100%)";
+    }
+    this.touched = !this.touched;
 
   }
 

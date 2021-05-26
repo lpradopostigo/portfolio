@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack",
+    "build": "webpack --env NODE_ENV=production",
     "start": "webpack serve --open 'Firefox' --mode development",
-    "dev": "webpack serve --open 'Firefox' --mode production"
+    "dev": "webpack serve --open 'Firefox' --mode production --env NODE_ENV=production"
   },
   "keywords": [],
   "author": "lpradopostigo@gmail.com",
@@ -24,6 +24,7 @@
   "dependencies": {
     "@babel/core": "^7.14.3",
     "@babel/preset-env": "^7.14.2",
+    "@glidejs/glide": "^3.4.1",
     "@shoelace-style/shoelace": "^2.0.0-beta.40",
     "babel-loader": "^8.2.2",
     "css-loader": "^5.2.4",

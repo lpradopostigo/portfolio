@@ -1,8 +1,14 @@
 module.exports = {
+  purge: {
+    enabled: false,
+    content: ['./src/**/*.html', './src/**/*.js']
+  },
+
   theme: {
+
     extend: {
       backgroundImage: theme => ({
-        "hero": "linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('/src/assets/hero.jpg')",
+        "hero": "linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url('/src/assets/hero.jpg')",
 
       }),
       zIndex: {
