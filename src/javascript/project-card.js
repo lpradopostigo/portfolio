@@ -1,20 +1,17 @@
-import { LitElement, html, css } from 'lit';
+import { LitElement, html, css } from 'lit'
 
-
-export class ProjectCard extends LitElement {
-  static get styles() {
+export default class ProjectCard extends LitElement {
+  static get styles () {
     return css`
       :host{
         display: block;
-      }
-
-      .card{
-      border-radius: 0.375rem;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+        border-radius: 0.375rem;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+        flex-basis: 80%;
       }
 
       .thumbnail-container{
@@ -72,77 +69,90 @@ export class ProjectCard extends LitElement {
       .button:hover{
       background-color: rgb(219, 39, 119);
       }
-     `;
+
+      @media (min-width: 640px) {
+        .thumbnail-container{
+          height: 16rem;
+        }
+
+        :host{
+          flex-basis: 40%;
+
+        }
+       }
+
+      @media (min-width: 1024px) {
+        .thumbnail-container{
+        height: 18rem;
+        }
+      }
+
+     `
   }
 
-  static get properties() {
+  static get properties () {
     return {
       repositoryHref: { type: String },
       websiteHref: { type: String }
-    };
+    }
   }
 
-  constructor() {
-    super();
-    this.touched = false;
+  constructor () {
+    super()
+    this.touched = false
   }
 
-  render() {
+  render () {
     return html`
-      <div class="card">
         <div class="thumbnail-container" @mouseenter=${this._showLinks} @mouseleave=${this._hideLinks}
           @touchstart=${this._toggleLinks}>
           <slot name=thumbnail></slot>
           <div class="links">
-            ${this.repositoryHref ? html`<a class="button" href=${this.repositoryHref} target="_blank"
-              rel="noreferrer noopener" @touchstart=${(e) => { e.stopPropagation(); }}>Repository</a>` : null}
-            ${this.websiteHref ? html`<a class="button" href=${this.websiteHref} target="_blank" rel="noreferrer noopener"
-              @touchstart=${(e) => { e.stopPropagation(); }}>Website</a>` : null}
+            ${this.repositoryHref
+              ? html`<a class="button" href=${this.repositoryHref} target="_blank" rel="noreferrer noopener"
+                            @touchstart=${(e) => { e.stopPropagation() }}>Repository</a>`
+              : null}
+                          ${this.websiteHref
+              ? html`<a class="button" href=${this.websiteHref} target="_blank" rel="noreferrer noopener"
+                            @touchstart=${(e) => { e.stopPropagation() }}>Website</a>`
+              : null}
           </div>
         </div>
         <div class="details">
           <slot name=title></slot>
           <slot name=description></slot>
         </div>
-      </div>
-  `;
+  `
   }
 
-  _showLinks() {
-    const thumbnail = this.shadowRoot.querySelector("slot[name=thumbnail]").assignedNodes()[0];
-    const links = this.shadowRoot.querySelector(".links");
+  _showLinks () {
+    const thumbnail = this.shadowRoot.querySelector('slot[name=thumbnail]').assignedNodes()[0]
+    const links = this.shadowRoot.querySelector('.links')
 
-    thumbnail.style.transform = "scale(1.2)";
-    links.style.transform = "translateY(-100%)";
-
+    thumbnail.style.transform = 'scale(1.2)'
+    links.style.transform = 'translateY(-100%)'
   }
 
-  _hideLinks() {
-    const thumbnail = this.shadowRoot.querySelector("slot[name=thumbnail]").assignedNodes()[0];
-    const links = this.shadowRoot.querySelector(".links");
-    thumbnail.style.transform = "scale(1)";
-    links.style.transform = "translateY(100%)";
-
-
+  _hideLinks () {
+    const thumbnail = this.shadowRoot.querySelector('slot[name=thumbnail]').assignedNodes()[0]
+    const links = this.shadowRoot.querySelector('.links')
+    thumbnail.style.transform = 'scale(1)'
+    links.style.transform = 'translateY(100%)'
   }
 
-  _toggleLinks(e) {
-    console.log(e.target);
-    const thumbnail = this.shadowRoot.querySelector("slot[name=thumbnail]").assignedNodes()[0];
-    const links = this.shadowRoot.querySelector(".links");
+  _toggleLinks (e) {
+    console.log(e.target)
+    const thumbnail = this.shadowRoot.querySelector('slot[name=thumbnail]').assignedNodes()[0]
+    const links = this.shadowRoot.querySelector('.links')
     if (!this.touched) {
-      thumbnail.style.transform = "scale(1.2)";
-      links.style.transform = "translateY(-100%)";
+      thumbnail.style.transform = 'scale(1.2)'
+      links.style.transform = 'translateY(-100%)'
+    } else {
+      thumbnail.style.transform = 'scale(1)'
+      links.style.transform = 'translateY(100%)'
     }
-    else {
-      thumbnail.style.transform = "scale(1)";
-      links.style.transform = "translateY(100%)";
-    }
-    this.touched = !this.touched;
-
+    this.touched = !this.touched
   }
-
-
 }
 
-window.customElements.define('project-card', ProjectCard);;
+window.customElements.define('project-card', ProjectCard)

@@ -1,8 +1,8 @@
-import "tailwindcss/tailwind.css";
 
 import "/src/styles/index.css";
 import "./project-card";
-import "./carousel";
+import "./bro-carousel";
+import "./bro-nav";
 
 const navbar = document.querySelector("nav");
 

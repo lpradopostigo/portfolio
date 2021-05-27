@@ -14,6 +14,11 @@
   "license": "ISC",
   "devDependencies": {
     "autoprefixer": "^10.2.5",
+    "eslint": "^7.27.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.23.3",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.1.0",
     "html-webpack-plugin": "^5.3.1",
     "postcss": "^8.2.15",
     "tailwindcss": "^2.1.2",
@@ -24,10 +29,10 @@
   "dependencies": {
     "@babel/core": "^7.14.3",
     "@babel/preset-env": "^7.14.2",
-    "@glidejs/glide": "^3.4.1",
-    "@shoelace-style/shoelace": "^2.0.0-beta.40",
     "babel-loader": "^8.2.2",
     "css-loader": "^5.2.4",
+    "lit": "^2.0.0-rc.2",
+    "modern-normalize": "^1.1.0",
     "postcss-loader": "^5.3.0",
     "style-loader": "^2.0.0"
   }
