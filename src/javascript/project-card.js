@@ -99,7 +99,8 @@ export default class ProjectCard extends LitElement {
 
   render () {
     return html`
-      <div @mouseenter=${this.showLinks} @mouseleave=${this.hideLinks} @click=${this.toggleLinks}>
+      <div @mouseenter=${this.showLinks} @mouseleave=${this.hideLinks} @click=${this.toggleLinks}
+        @touchmove=${(e) => { e.preventDefault() }}>
         <slot name=thumbnail></slot>
         <div>
           ${this.repositoryHref
