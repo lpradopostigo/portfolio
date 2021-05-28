@@ -1,4 +1,5 @@
 
+import '../static/index.html'
 import '../styles/index.css'
 import './project-card'
 import './bro-carousel'
