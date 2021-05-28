@@ -27,6 +27,7 @@ export default class ProjectCard extends LitElement {
         min-height: 100%;
         width:100%;
         transition: all 1s;
+        pointer-events: none;
 
       }
 
