@@ -91,23 +91,23 @@ export default class ProjectCard extends LitElement {
 
   constructor () {
     super()
-    this.touched = false
     this.links = undefined
     this.thumbnail = undefined
+    this.linksHidden = true
   }
 
   render () {
     return html`
-      <div @mouseenter=${this.showLinks} @mouseleave=${this.hideLinks} @touchstart=${this.toggleLinks}>
+      <div @mouseenter=${this.showLinks} @mouseleave=${this.hideLinks} @click=${this.toggleLinks}>
         <slot name=thumbnail></slot>
         <div>
           ${this.repositoryHref
             ? html`<a href=${this.repositoryHref} target="_blank" rel="noreferrer noopener"
-                @touchstart=${(event) => { event.stopPropagation() }}>Repository</a>`
+                @click=${(event) => { event.stopPropagation() }}>Repository</a>`
             : null}
           ${this.websiteHref
             ? html`<a href=${this.websiteHref} target="_blank" rel="noreferrer noopener"
-                @touchstart=${(event) => { event.stopPropagation() }}>Website</a>`
+                @click=${(event) => { event.stopPropagation() }}>Website</a>`
             : null}
         </div>
       </div>
@@ -124,24 +124,27 @@ export default class ProjectCard extends LitElement {
   }
 
   showLinks () {
-    this.thumbnail.style.transform = 'scale(1.2)'
-    this.links.style.transform = 'translateY(-100%)'
+    if (this.linksHidden) {
+      this.thumbnail.style.transform = 'scale(1.2)'
+      this.links.style.transform = 'translateY(-100%)'
+      this.linksHidden = false
+    }
   }
 
   hideLinks () {
-    this.thumbnail.style.transform = 'scale(1)'
-    this.links.style.transform = 'translateY(100%)'
+    if (!this.linksHidden) {
+      this.thumbnail.style.transform = 'scale(1)'
+      this.links.style.transform = 'translateY(100%)'
+      this.linksHidden = true
+    }
   }
 
   toggleLinks () {
-    if (!this.touched) {
-      this.thumbnail.style.transform = 'scale(1.2)'
-      this.links.style.transform = 'translateY(-100%)'
+    if (this.linksHidden) {
+      this.showLinks()
     } else {
-      this.thumbnail.style.transform = 'scale(1)'
-      this.links.style.transform = 'translateY(100%)'
+      this.hideLinks()
     }
-    this.touched = !this.touched
   }
 }
 
