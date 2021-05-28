@@ -68,19 +68,14 @@ export default class ProjectCard extends LitElement {
       }
 
       @media (min-width: 640px) {
-        .thumbnail-container{
-          height: 16rem;
-        }
-
-        :host{
-          flex-basis: 40%;
-
+        :host > div:first-child{
+          height: 20rem;
         }
        }
 
       @media (min-width: 1024px) {
-        .thumbnail-container{
-        height: 18rem;
+        :host > div:first-child{
+          height: 24rem;
         }
       }
 
