@@ -39,7 +39,7 @@ bro-nav > img {
   z-index: -1;
   background-position: top;
   background-size: cover;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0)), url("/src/assets/hero3.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0)), url("/src/assets/bg-hero.jpg");
 }
 
 .hero__header {
@@ -50,7 +50,6 @@ bro-nav > img {
 .hero__header h1 {
   color: #06d6a0;
   font-weight: 400;
-  font-size: var(--font--size-2xl);
 }
 
 .hero__header h2 {
@@ -94,13 +93,15 @@ bro-carousel div {
 }
 
 #projects project-card h1 {
-  font-size: var(--font--size-xl);
+  font-size: var(--font--size-lg);
+  font-weight: 600;
 }
 
 #projects > h1 {
   padding-left: 10%;
   padding-bottom: 2.5rem;
   margin: 0;
+  font-weight: 600;
 }
 
 footer {
