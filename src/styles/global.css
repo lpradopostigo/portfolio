@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Oxanium:wght@400;500&family=Quicksand:wght@400;500;600&family=Raleway:wght@400;500&display=swap");
+
+:root {
+  --font--size-xs: 0.75rem;
+  --font--size-sm: 0.875rem;
+  --font--size-base: 1rem;
+  --font--size-lg: 1.125rem;
+  --font--size-xl: 1.25rem;
+  --font--size-2xl: 1.5rem;
+}
+
+a {
+  color: inherit;
+  font-family: inherit;
+}
+
+img {
+  display: block;
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+}
+
+h1 {
+  font-family: "QuickSand", sans-serif;
+  font-size: var(--font--size-2xl);
+}

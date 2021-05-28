@@ -10,14 +10,14 @@ export default class BroNav extends LitElement {
       }
       slot[name=logo]{
         display: flex;
-        width: 50%;
+        width: 25%;
         align-items: center;
       }
 
       slot[name=items]{
         display: flex;
-        justify-content: space-around;
-        width: 50%;
+        justify-content: space-between;
+        width: 75%;
       }
 
 

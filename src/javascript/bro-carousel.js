@@ -1,5 +1,6 @@
 import { LitElement, html, css } from 'lit'
 
+// FIXME small z-index glitch on  second iteration
 export default class BroCarousel extends LitElement {
   static get styles () {
     return css`
@@ -33,17 +34,18 @@ export default class BroCarousel extends LitElement {
   firstUpdated () {
     this.queue = Array.from(this.shadowRoot.querySelector('slot').assignedElements())
     this.queue[0].style.opacity = 1
-    this.queue[0].style.zIndex = 1
+
+    this.queue[0].style.zIndex = 3
+    this.queue[1].style.zIndex = 2
+    this.queue[2].style.zIndex = 1
+    this.queue[this.queue.length - 1].style.zIndex = 0
 
     setTimeout(() => {
-      this.queue[1].style.zIndex = 0
       this.queue[1].style.transform = 'scale(.75) translateX(100%)'
       this.queue[1].style.opacity = 1
 
-      this.queue[2].style.zIndex = -1
       this.queue[2].style.transform = 'scale(.75) translateX(100%)'
 
-      this.queue[this.queue.length - 1].style.zIndex = -1
       this.queue[this.queue.length - 1].style.transform = 'scale(.75) translateX(-100%)'
       this.queue[this.queue.length - 1].style.opacity = 1
     }, 500)
@@ -54,17 +56,19 @@ export default class BroCarousel extends LitElement {
   }
 
   forward () {
-    this.queue[0].style.zIndex = -1
+    this.queue[0].style.zIndex = 2
     this.queue[0].style.transform = 'scale(.75) translateX(-100%)'
     this.queue[0].style.opacity = 1
 
-    this.queue[1].style.zIndex = 1
+    this.queue[1].style.zIndex = 3
     this.queue[1].style.transform = 'scale(1)'
     this.queue[1].style.opacity = 1
 
-    this.queue[2].style.zIndex = 0
+    this.queue[2].style.zIndex = 1
+    this.queue[2].style.transform = 'scale(.75) translateX(100%)'
     this.queue[2].style.opacity = 1
 
+    this.queue[this.queue.length - 1].style.zIndex = 0
     this.queue[this.queue.length - 1].style.transform = 'scale(.75) translateX(100%)'
     this.queue[this.queue.length - 1].style.opacity = 0
 

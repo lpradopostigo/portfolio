@@ -1,52 +1,39 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const path = require('path')
 module.exports = {
   entry: './src/javascript/index.js',
-  mode: "production",
+  mode: 'production',
 
   module: {
     rules: [
       {
         test: /\.css$/,
-        use: [
-          {
-            loader: 'style-loader',
-          },
-          {
-            loader: 'css-loader',
-            options: {
-              importLoaders: 1,
-            }
-          },
-          {
-            loader: 'postcss-loader'
-          }
-        ]
+        use: ['style-loader', 'css-loader']
       },
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: "babel-loader",
+        loader: 'babel-loader',
         options: {
-          presets: ["@babel/preset-env"]
+          presets: ['@babel/preset-env']
         }
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
-        type: 'asset/resource',
-      },
+        type: 'asset/resource'
+      }
     ]
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './src/static/index.html',
-    }),
+      template: './src/static/index.html'
+    })
   ],
   output: {
     filename: 'index.bundle.js',
     path: path.resolve(__dirname, 'dist'),
-    clean: true,
-  },
+    clean: true
+  }
 
   // devServer: {
   //   headers: {
@@ -55,4 +42,4 @@ module.exports = {
   //     "Access-Control-Allow": "-*"
   //   }
   // }
-};
+}

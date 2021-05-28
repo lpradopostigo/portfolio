@@ -1,14 +1,10 @@
 @import "/node_modules/modern-normalize/modern-normalize.css";
-a {
-  color: inherit;
-}
-
+@import "global.css";
 nav {
   width: 100%;
-}
-
-img {
-  display: block;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
 bro-nav {
@@ -18,25 +14,12 @@ bro-nav {
   height: 10vh;
 }
 
-svg {
-  height: 100px;
-  width: 100px;
+bro-nav > a {
+  text-decoration: none;
 }
 
-#hero > img {
-  height: 100vh;
-  width: 100%;
-  position: absolute;
-  top: 0;
-  z-index: -1;
-  object-fit: cover;
-  object-position: center;
-  filter: brightness(0.75);
-}
-
-.hero__header {
-  color: white;
-  text-align: center;
+bro-nav > img {
+  height: var(--font--size-xl);
 }
 
 #hero {
@@ -47,15 +30,84 @@ svg {
   justify-content: space-around;
 }
 
+#hero > div {
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  background-attachment: fixed;
+  top: 0;
+  z-index: -1;
+  background-position: top;
+  background-size: cover;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0)), url("/src/assets/hero3.jpg");
+}
+
+.hero__header {
+  color: white;
+  text-align: center;
+}
+
+.hero__header h1 {
+  color: #06d6a0;
+  font-weight: 400;
+  font-size: var(--font--size-2xl);
+}
+
+.hero__header h2 {
+  font-family: "Oxanium", cursive;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: var(--font--size-base);
+}
+
 bro-carousel img {
   width: 4rem;
   height: 4rem;
 }
 
 bro-carousel div {
-  background-color: white;
+  background-color: rgb(249, 250, 251);
   height: min-content;
   width: min-content;
   padding: 0.5rem;
   border-radius: 0.5rem;
+}
+#projects {
+  background-color: rgb(243, 244, 246);
+  min-height: 90vh;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
+#projects div {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  width: 100%;
+  gap: 2.5rem;
+}
+
+#projects project-card {
+  background-color: white;
+  width: 90%;
+}
+
+#projects project-card h1 {
+  font-size: var(--font--size-xl);
+}
+
+#projects > h1 {
+  padding-left: 10%;
+  padding-bottom: 2.5rem;
+  margin: 0;
+}
+
+footer {
+  background-color: rgb(229, 231, 235);
+  padding: 5%;
+}
+
+footer svg {
+  height: var(--font--size-base);
 }
