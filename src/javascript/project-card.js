@@ -27,7 +27,6 @@ export default class ProjectCard extends LitElement {
         min-height: 100%;
         width:100%;
         transition: all 1s;
-        pointer-events: none;
 
       }
 
@@ -100,8 +99,10 @@ export default class ProjectCard extends LitElement {
   render () {
     return html`
       <div @mouseenter=${this.showLinks} @mouseleave=${this.hideLinks} @click=${this.toggleLinks}
-        @touchmove=${(e) => { e.preventDefault() }}>
-        <slot name=thumbnail></slot>
+        @touchstart=${(e) => {
+ console.log(e)
+         }}>
+        <slot name=thumbnail  @click=${(e) => { e.preventDefault() }}></slot>
         <div>
           ${this.repositoryHref
             ? html`<a href=${this.repositoryHref} target="_blank" rel="noreferrer noopener"
@@ -141,7 +142,8 @@ export default class ProjectCard extends LitElement {
     }
   }
 
-  toggleLinks () {
+  toggleLinks (e) {
+    console.log(e)
     if (this.linksHidden) {
       this.showLinks()
     } else {
