@@ -4,6 +4,7 @@ import '../styles/index.css'
 import './components/project-card'
 import './components/bro-carousel'
 import '@brocolio/bro-nav'
+import './test.ts'
 // fix event still prensent when window change its size
 const navbar = document.querySelector('bro-nav')
 

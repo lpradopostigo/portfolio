@@ -23,10 +23,23 @@ module.exports = {
         }
       },
       {
+        test: /\.ts$/,
+        exclude: /node_modules/,
+        loader: 'ts-loader'
+      },
+      {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: 'asset/resource'
       }
     ]
+  },
+  resolve: {
+    extensions: ['.tsx', '.ts', '.js']
+  },
+
+  devServer: {
+    open: false,
+    host: '0.0.0.0'
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -38,12 +51,4 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     clean: true
   }
-
-  // devServer: {
-  //   headers: {
-  //     "Cross-Origin-Opener-Policy": "same-origin",
-  //     "Cross-Origin-Embedder-Policy": "require-corp",
-  //     "Access-Control-Allow": "-*"
-  //   }
-  // }
 }
