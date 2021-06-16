@@ -1,15 +1,27 @@
 
 import '../static/index.html'
 import '../styles/index.css'
-import './project-card'
-import './bro-carousel'
-import './bro-nav'
+import './components/project-card'
+import './components/bro-carousel'
+import '@brocolio/bro-nav'
+// fix event still prensent when window change its size
+const navbar = document.querySelector('bro-nav')
 
-const navbar = document.querySelector('nav')
+if (!window.matchMedia('(min-width: 768px)').matches) {
+  const links = Array.from(navbar.querySelectorAll('a'))
+  links.forEach(link => {
+    link.addEventListener('click', () => {
+      navbar.hideLinksContainer()
+    })
+  })
+}
 
 window.addEventListener('scroll', () => {
-  window.scrollY > 100 && (navbar.style.background = 'rgba(0,0,0,0.8)')
-  window.scrollY < 100 && (navbar.style.background = 'transparent')
+  if (window.scrollY > 100) {
+    navbar.style.backgroundColor = 'rgba(0,0,0,0.8)'
+  } else {
+    navbar.style.backgroundColor = 'transparent'
+  }
 })
 
 // const body = document.querySelector('body')
