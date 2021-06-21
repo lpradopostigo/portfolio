@@ -5,6 +5,7 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: var(--nav-height);
 }
+
 bro-nav {
   width: 100%;
   position: sticky;
@@ -27,7 +28,7 @@ bro-nav::part(links) {
 bro-nav a {
   display: inline-block;
   text-decoration: none;
-  transition-property: transform color;
+  transition-property: transform, color;
   transition-duration: 0.25s;
   color: black;
 }
