@@ -23,6 +23,10 @@ export default class ProjectCard extends LitElement {
   }
 
   static getHrefButton (label, href) {
+    if (href == null || href === '') {
+      return html``
+    }
+
     return html`<a href=${href} target="_blank" rel="noreferrer noopener"
                    @click=${(e) => {
                        e.stopPropagation()
@@ -35,12 +39,8 @@ export default class ProjectCard extends LitElement {
             <slot class="thumbnail" name=thumbnail></slot>
 
             <div class="link-wrapper">
-                ${this.repositoryHref
-                        ? ProjectCard.getHrefButton('Repository', this.repositoryHref)
-                        : null}
-                ${this.websiteHref
-                        ? ProjectCard.getHrefButton('Website', this.websiteHref)
-                        : null}
+                ${ProjectCard.getHrefButton('Repository', this.repositoryHref)}
+                ${ProjectCard.getHrefButton('Website', this.websiteHref)}
             </div>
         </div>
 
