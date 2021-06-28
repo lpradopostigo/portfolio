@@ -8,6 +8,10 @@ export const styles = css`
     flex-direction: column;
     align-items: center;
   }
+  
+  span{
+    display: inline-block;
+  }
 
   .container {
     height: 14rem;
@@ -67,6 +71,22 @@ export const styles = css`
     background-color: #EF476F;
   }
 
+  .advice{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .advice svg{
+    height: var(--font-size--base);
+    width: var(--font-size--base);
+    fill: #EF476F;
+  }
+  
+  .advice span{
+    font-size: var(--font-size--sm);
+  }
+  
   @media (min-width: 640px) {
     .container {
       height: 20rem;
