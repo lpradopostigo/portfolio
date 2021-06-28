@@ -27,7 +27,7 @@ export default class ProjectCard extends LitElement {
       return html``
     }
 
-    return html`<a href=${href} target="_blank" rel="noreferrer noopener"
+    return html`<a href=${href} class="link" target="_blank" rel="noreferrer noopener"
                    @click=${(e) => {
                        e.stopPropagation()
                    }}>${label}</a>`

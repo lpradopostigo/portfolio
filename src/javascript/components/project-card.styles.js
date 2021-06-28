@@ -7,7 +7,6 @@ export const styles = css`
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow); */
   }
 
   .container {
@@ -51,17 +50,20 @@ export const styles = css`
     padding-bottom: 1.25rem;
   }
 
-  a {
+  .link {
     border-width: 1px;
     padding: 0.25rem;
     text-decoration: none;
     border-style: solid;
     border-color: rgba(255, 255, 255, 1);
     color: rgba(255, 255, 255, 1);
+    transition-property: background-color;
+    transition-duration: 0.25s;
+    transition-timing-function: ease-in-out;
     
   }
-
-  a:focus {
+  
+  .link:hover{
     background-color: #EF476F;
   }
 
@@ -76,5 +78,5 @@ export const styles = css`
       height: 24rem;
     }
   }
-
+  
 `
