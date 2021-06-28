@@ -3,10 +3,10 @@
 
 <head>
     <meta charset="UTF-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <title>Luis Prado's Portfolio</title>
-    <link rel=icon href="../assets/icons/favicon.svg"/>
+    <link href="../assets/icons/favicon.svg" rel=icon/>
 
 </head>
 
@@ -15,12 +15,12 @@
 </div>
 <div id="content" style="display: none">
     <bro-nav>
-        <img slot="logo" src="../assets/icons/code.svg" alt="logo">
-        <a slot="link" href="#hero">Start</a>
-        <a slot="link" href="#projects">Projects</a>
-        <a slot="link" href="#contact">Contact</a>
-        <svg slot="links-drawer" fill="#fff" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-             viewBox="0 0 24 24">
+        <img alt="logo" slot="logo" src="../assets/icons/code.svg">
+        <a href="#hero" slot="link">Start</a>
+        <a href="#projects" slot="link">Projects</a>
+        <a href="#contact" slot="link">Contact</a>
+        <svg fill="#fff" height="24" slot="links-drawer" viewBox="0 0 24 24" width="24"
+             xmlns="http://www.w3.org/2000/svg">
             <path
                     d="M23.677 18.52c.914 1.523-.183 3.472-1.967 3.472h-19.414c-1.784 0-2.881-1.949-1.967-3.472l9.709-16.18c.891-1.483 3.041-1.48 3.93 0l9.709 16.18z"/>
         </svg>
@@ -29,36 +29,38 @@
 
     <main>
         <section id="hero">
-            <div></div>
+            <div class="hero__background"></div>
             <header class="hero__header">
                 <h1>
                     Luis Angel <br/>
                     Prado Postigo
                 </h1>
-                <h2>software developer</h2>
+                <span>software developer</span>
             </header>
 
             <bro-carousel>
-                <div><img src="../assets/logos/web-assembly.svg" alt="web-assembly"></div>
-                <div><img src="../assets/logos/cpp.svg" alt="cpp"></div>
-                <div><img src="../assets/logos/javascript.svg" alt="javascript"></div>
-                <div><img src="../assets/logos/webpack.svg" alt="webpack"></div>
-                <div><img src="../assets/logos/html.svg" alt="html"></div>
-                <div><img src="../assets/logos/css.svg" alt="css"></div>
-                <div><img src="../assets/logos/sass.svg" alt="sass"></div>
-                <div><img src="../assets/logos/python.svg" alt="python"></div>
-                <div><img src="../assets/logos/git.svg" alt="git"></div>
+                <div><img alt="web-assembly" src="../assets/logos/web-assembly.svg"></div>
+                <div><img alt="cpp" src="../assets/logos/cpp.svg"></div>
+                <div><img alt="javascript" src="../assets/logos/javascript.svg"></div>
+                <div><img alt="webpack" src="../assets/logos/webpack.svg"></div>
+                <div><img alt="html" src="../assets/logos/html.svg"></div>
+                <div><img alt="css" src="../assets/logos/css.svg"></div>
+                <div><img alt="sass" src="../assets/logos/sass.svg"></div>
+                <div><img alt="python" src="../assets/logos/python.svg"></div>
+                <div><img alt="git" src="../assets/logos/git.svg"></div>
             </bro-carousel>
         </section>
 
         <section id="projects">
-            <h1 class="">Projects</h1>
+            <h2>Projects</h2>
 
-            <div>
+            <div class="project-card-wrapper">
+
+
                 <project-card repository-href="https://github.com/lprapopostigo/brocolio-cipher"
                               website-href="https://brocolio-cipher.netlify.app">
-                    <img loading="lazy" slot=thumbnail src="../assets/project_brocolio-cipher.jpg" alt="">
-                    <h1 slot=title>Brocolio Cipher</h1>
+                    <img alt="" loading="lazy" slot=thumbnail src="../assets/project_brocolio-cipher.jpg">
+                    <h3 slot=title>Brocolio Cipher</h3>
                     <p slot=description>
                         Client-side image cipher tool, algorithm written in Rust and brought to the web using Web
                         Assembly.
@@ -67,15 +69,15 @@
 
                 <project-card repository-href="https://github.com/lprapopostigo/travelly"
                               website-href="https://travelly-brocolio.netlify.app">
-                    <img loading="lazy" slot=thumbnail src="../assets/project_travelly.jpg" alt="">
-                    <h1 slot=title>Travelly</h1>
+                    <img alt="" loading="lazy" slot=thumbnail src="../assets/project_travelly.jpg">
+                    <h3 slot=title>Travelly</h3>
                     <p slot=description>Landing page concept for a traveling agency</p>
                 </project-card>
 
                 <project-card repository-href="https://github.com/lprapopostigo/web-calculator"
                               website-href="https://brocolio-calculator.netlify.app">
-                    <img loading="lazy" slot=thumbnail src="../assets/project_brocolio-calculator.jpg" alt="">
-                    <h1 slot=title>Web Calculator</h1>
+                    <img alt="" loading="lazy" slot=thumbnail src="../assets/project_brocolio-calculator.jpg">
+                    <h3 slot=title>Web Calculator</h3>
                     <p slot=description>
                         Responsive javascript calculator
                     </p>
@@ -86,13 +88,13 @@
 
     <footer id="contact">
         <div>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="#000" viewBox="0 0 24 24">
+            <svg fill="#000" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path d="M12 12.713l-11.985-9.713h23.97l-11.985 9.713zm0 2.574l-12-9.725v15.438h24v-15.438l-12 9.725z"/>
             </svg>
             <span>lpradopostigo@gmail.com</span>
         </div>
         <div>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="#000" viewBox="0 0 24 24">
+            <svg fill="#000" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path
                         d="M19 2c0-1.104-.896-2-2-2h-10c-1.104 0-2 .896-2 2v20c0 1.104.896 2 2 2h10c1.104 0 2-.896 2-2v-20zm-8.5 0h3c.276 0 .5.224.5.5s-.224.5-.5.5h-3c-.276 0-.5-.224-.5-.5s.224-.5.5-.5zm1.5 20c-.553 0-1-.448-1-1s.447-1 1-1c.552 0 .999.448.999 1s-.447 1-.999 1zm5-3h-10v-14.024h10v14.024z"/>
             </svg>
@@ -100,7 +102,7 @@
         </div>
 
         <div>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="#000" viewBox="0 0 24 24">
+            <svg fill="#000" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path
                         d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
             </svg>
