@@ -32,12 +32,12 @@ bro-nav a:hover {
 }
 
 bro-nav img {
-  height: var(--font--size-xl);
+  height: var(--font-size--xl);
 }
 
 bro-nav svg {
   transform: rotate(180deg);
-  height: var(--font--size-xl);
+  height: var(--font-size--xl);
 }
 
 #hero {
@@ -73,7 +73,7 @@ bro-nav svg {
   font-family: "Oxanium", cursive;
   font-weight: 500;
   text-transform: uppercase;
-  font-size: var(--font--size-base);
+  font-size: var(--font-size--base);
 }
 
 bro-carousel img {
@@ -107,10 +107,12 @@ bro-carousel div {
 #projects project-card {
   background-color: white;
   width: 85%;
+  box-shadow: var(--box-shadow--md);
+
 }
 
 #projects project-card h1 {
-  font-size: var(--font--size-lg);
+  font-size: var(--font-size--lg);
   font-weight: 600;
 }
 
@@ -127,7 +129,7 @@ footer {
 }
 
 footer svg {
-  height: var(--font--size-base);
+  height: var(--font-size--base);
 }
 
 @media (min-width: 768px) {
