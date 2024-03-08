@@ -129,7 +129,7 @@ nav {
 /* ----- side projects ----- */
 .side-projects div:has(.project) {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
   gap: 1.5rem;
 }
 
@@ -139,7 +139,7 @@ nav {
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
     rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
   border-radius: 0.125rem;
-  aspect-ratio: 4/3;
+  aspect-ratio: 1.38;
 }
 
 .project div:has(h3) {
@@ -159,13 +159,13 @@ nav {
 
 /* ----- media queries ----- */
 @media screen and (max-width: 426px) {
-  .side-projects div:has(.project) {
-    grid-template-columns: 1fr;
-  }
-
   main {
     padding: 2rem;
     gap: 2rem;
+  }
+
+  section {
+    scroll-margin-top: calc(2.5rem + 2rem);
   }
 
   nav {
