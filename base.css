@@ -1,0 +1,105 @@
+/* --- theme --- */
+:root {
+  /* ----- colors ----- */
+
+  /* base colors */
+  --color-black: #000;
+  --color-white: #fff;
+  --color-blue: #0022ff;
+
+  /* auxiliary colors */
+  --color-javascript: #ffe516;
+  --color-typescript: #0076f7;
+  --color-html: #ff3f0a;
+  --color-css: #0075cb;
+  --color-sass: #ff3399;
+  --color-tailwind: #00daff;
+  --color-react: #5ddcff;
+  --color-figma: #ff4711;
+  --color-sqlite: #003b57;
+  --color-c: #00599c;
+  --color-rust: #000000;
+
+  /* tokens */
+  --color-text-primary: var(--color-black);
+  --color-text-secondary: var(--color-white);
+
+  --color-accent: var(--color-blue);
+  --color-separator: var(--color-black);
+  --color-surface-primary: var(--color-white);
+
+  /* ----- typography ----- */
+  --font-family: "Source Sans 3", sans-serif;
+
+  --font-size-body-1: 1rem;
+  --font-size-body-2: 0.875rem;
+  --font-size-headline-1: 2.25rem;
+  --font-size-headline-2: 1.5rem;
+  --font-size-subtitle-1: 1.125rem;
+}
+
+body {
+  font-family: var(--font-family);
+  line-height: normal;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-text-primary);
+}
+
+a:hover {
+  color: var(--color-accent);
+}
+
+a:hover svg {
+  fill: var(--color-accent);
+}
+
+p,
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+
+h1 {
+  font-size: var(--font-size-headline-1);
+  font-weight: 700;
+}
+
+h2 {
+  font-size: var(--font-size-headline-2);
+  font-weight: 700;
+}
+
+h3 {
+  font-size: var(--font-size-subtitle-1);
+  font-weight: 700;
+}
+
+/* ----- utilities ----- */
+.text-headline-1 {
+  font-size: var(--font-size-headline-1);
+  font-weight: 700;
+}
+
+.text-headline-2 {
+  font-size: var(--font-size-headline-2);
+  font-weight: 700;
+}
+
+.text-body-1 {
+  font-size: var(--font-size-body-1);
+  font-weight: 400;
+}
+
+.text-body-2 {
+  font-size: var(--font-size-body-2);
+  font-weight: 400;
+}
+
+.text-subtitle-1 {
+  font-size: var(--font-size-subtitle-1);
+  font-weight: 700;
+}

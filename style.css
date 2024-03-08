@@ -1,0 +1,174 @@
+body {
+  max-width: 56rem;
+  margin: auto;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  padding: 4rem;
+  gap: 4rem;
+}
+
+section {
+  scroll-margin-top: calc(2.5rem + 4rem);
+}
+
+section > h2 {
+  margin-bottom: 1.5rem;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  background-color: var(--color-surface-primary);
+  z-index: 1;
+}
+
+nav {
+  box-sizing: content-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 4rem;
+  height: 2.5rem;
+  border-bottom: 0.125rem solid var(--color-separator);
+}
+
+/* ----- about me ----- */
+.about-me {
+  max-width: 36rem;
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 6rem 1fr;
+  grid-template-rows: max-content 1fr;
+}
+
+.about-me img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 100%;
+  align-self: center;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+    rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+}
+
+.about-me div:has(h1) {
+  align-self: center;
+}
+
+.about-me h1 {
+  margin-bottom: 0.5rem;
+}
+
+.about-me a {
+  margin-right: 0.5rem;
+}
+
+.about-me div:has(p) {
+  grid-column: span 2;
+}
+
+.about-me p:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+/* ----- work experience ----- */
+.work-experience {
+  max-width: 36rem;
+}
+
+.timeline {
+  display: flex;
+  gap: 1rem;
+}
+
+.timeline__line {
+  width: 0.5rem;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.timeline__line::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  height: 100%;
+  width: 0.125rem;
+  transform: translateX(-50%);
+  background-color: var(--color-separator);
+}
+
+.timeline__item:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+.timeline__item {
+  position: relative;
+}
+
+.timeline__item::before {
+  content: "";
+  position: absolute;
+  left: -1rem;
+  width: 0.5rem;
+  transform: translateX(-100%);
+  height: 0.5rem;
+  background-color: var(--color-accent);
+}
+
+.timeline__item h3 + div {
+  margin-bottom: 0.5rem;
+}
+
+.timeline__item p:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+/* ----- side projects ----- */
+.side-projects div:has(.project) {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.project img {
+  object-fit: cover;
+  width: 100%;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+  border-radius: 0.125rem;
+  aspect-ratio: 4/3;
+}
+
+.project div:has(h3) {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.project div:has(h3) + div {
+  margin-bottom: 0.5rem;
+}
+
+.project p:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+/* ----- media queries ----- */
+@media screen and (max-width: 426px) {
+  .side-projects div:has(.project) {
+    grid-template-columns: 1fr;
+  }
+
+  main {
+    padding: 2rem;
+    gap: 2rem;
+  }
+
+  nav {
+    padding: 0 2rem;
+  }
+}
