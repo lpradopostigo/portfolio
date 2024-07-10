@@ -30,9 +30,25 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 4rem;
+  padding: 0.25rem 2rem;
   height: 2.5rem;
   border-bottom: 0.125rem solid var(--color-separator);
+}
+
+nav a {
+  text-decoration: none;
+}
+
+nav svg {
+  display: block;
+  height: 1.75rem;
+  width: 1.75rem;
+}
+
+nav > div {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
 }
 
 /* ----- about me ----- */
@@ -40,7 +56,7 @@ nav {
   max-width: 36rem;
   display: grid;
   gap: 1.5rem;
-  grid-template-columns: 6rem 1fr;
+  grid-template-columns: 7rem 1fr;
   grid-template-rows: max-content 1fr;
 }
 
@@ -49,7 +65,8 @@ nav {
   aspect-ratio: 1 / 1;
   border-radius: 100%;
   align-self: center;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+  box-shadow:
+    rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
     rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
 }
 
@@ -57,7 +74,10 @@ nav {
   align-self: center;
 }
 
-.about-me h1 {
+.about-me__title {
+  font-size: var(--font-size-headline-3);
+  font-weight: 300;
+  margin-top: -0.125rem;
   margin-bottom: 0.5rem;
 }
 
@@ -65,12 +85,8 @@ nav {
   margin-right: 0.5rem;
 }
 
-.about-me div:has(p) {
+.about-me p {
   grid-column: span 2;
-}
-
-.about-me p:not(:last-child) {
-  margin-bottom: 1rem;
 }
 
 /* ----- work experience ----- */
@@ -92,9 +108,9 @@ nav {
 .timeline__line::before {
   content: "";
   position: absolute;
-  top: 0;
+  top: 0.5rem;
   left: 50%;
-  height: 100%;
+  height: calc(100% - 0.5rem);
   width: 0.125rem;
   transform: translateX(-50%);
   background-color: var(--color-separator);
@@ -113,6 +129,7 @@ nav {
   position: absolute;
   left: -1rem;
   width: 0.5rem;
+  top: 0.5rem;
   transform: translateX(-100%);
   height: 0.5rem;
   background-color: var(--color-accent);
@@ -127,6 +144,10 @@ nav {
 }
 
 /* ----- side projects ----- */
+.side-projects {
+  max-width: 36rem;
+}
+
 .side-projects div:has(.project) {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
@@ -136,7 +157,8 @@ nav {
 .project img {
   object-fit: cover;
   width: 100%;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+  box-shadow:
+    rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
     rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
   border-radius: 0.125rem;
   aspect-ratio: 1.38;
@@ -167,8 +189,19 @@ nav {
   section {
     scroll-margin-top: calc(2.5rem + 2rem);
   }
+}
 
+footer {
+  text-align: end;
+  font-size: var(--font-size-body-2);
+}
+
+@media print {
   nav {
-    padding: 0 2rem;
+    display: none;
+  }
+
+  footer {
+    display: none;
   }
 }
