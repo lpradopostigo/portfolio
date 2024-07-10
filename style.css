@@ -51,6 +51,10 @@ nav > div {
   align-items: center;
 }
 
+.only-print {
+  display: none;
+}
+
 /* ----- about me ----- */
 .about-me {
   max-width: 36rem;
@@ -60,7 +64,7 @@ nav > div {
   grid-template-rows: max-content 1fr;
 }
 
-.about-me img {
+.about-me__image {
   width: 100%;
   aspect-ratio: 1 / 1;
   border-radius: 100%;
@@ -83,6 +87,14 @@ nav > div {
 
 .about-me a {
   margin-right: 0.5rem;
+}
+
+.about-me a > svg {
+  vertical-align: middle;
+}
+
+.about-me a .only-print {
+  margin-left: 0.25rem;
 }
 
 .about-me p {
@@ -180,7 +192,7 @@ nav > div {
 }
 
 /* ----- media queries ----- */
-@media screen and (max-width: 426px) {
+@media screen and (max-width: 576px) {
   main {
     padding: 2rem;
     gap: 2rem;
@@ -188,6 +200,10 @@ nav > div {
 
   section {
     scroll-margin-top: calc(2.5rem + 2rem);
+  }
+
+  .sections-links {
+    display: none;
   }
 }
 
@@ -197,11 +213,17 @@ footer {
 }
 
 @media print {
-  nav {
+  nav,
+  footer,
+  .about-me__image {
     display: none;
   }
 
-  footer {
-    display: none;
+  .only-print {
+    display: initial;
+  }
+
+  .about-me__info {
+    grid-column: span 2;
   }
 }
