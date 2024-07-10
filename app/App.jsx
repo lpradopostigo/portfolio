@@ -152,8 +152,8 @@ export default function App() {
           <p>
             JavaScript, TypeScript, React, Node.js, Go, Docker, PostgreSQL,
             MySQL, Git, GitLab, Rust, C, C++, MariaDB, SQLite, SolidJS, Vue,
-            CSS, HTML, SASS, Webpack, Vite, Astro, Jest, Linux, Rollup, Postman,
-            Figma, AdobeXD
+            CSS, Tailwind, Redux, Kendo, Bootstrap, HTML, SASS, Webpack, Vite,
+            Astro, Jest, Linux, Rollup, Postman, Figma, AdobeXD
           </p>
         </section>
 
