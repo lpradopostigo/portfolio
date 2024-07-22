@@ -69,6 +69,18 @@ const sideProjectsData = [
   },
 ];
 
+const educationData = [
+  {
+    title: "Computer Science",
+    date: "2019 - 2022",
+    description: (
+      <>
+        <p>Universidad Nacional de San Agustín (UNSA) - Arequipa, Peru</p>
+      </>
+    ),
+  },
+];
+
 export default function App() {
   return (
     <>
@@ -80,6 +92,7 @@ export default function App() {
           <div class="sections-links">
             <a href="#work-experience">career</a>
             <a href="#side-projects">relevant experience</a>
+            <a href="#education">education</a>
             <a href="#languages">languages</a>
             <a href="#technologies">technologies</a>
           </div>
@@ -125,8 +138,9 @@ export default function App() {
 
           <p>
             As a person, I constantly trying to learn from my mistakes, not to
-            be perfect but to avoid being too flawed. In my free time, I enjoy
-            creating tools to solve my own problems, and also composing music.
+            be perfect but to avoid being too flawed. In my free time, I like to
+            develop tools to address my own needs and also love to compose
+            music.
           </p>
         </section>
 
@@ -139,6 +153,11 @@ export default function App() {
           <h2>Relevant Experience</h2>
 
           <Timeline data={sideProjectsData}></Timeline>
+        </section>
+
+        <section id="education" class="education">
+          <h2>Education</h2>
+          <Timeline data={educationData}></Timeline>
         </section>
 
         <section id="languages" class="languages">
