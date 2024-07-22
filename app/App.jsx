@@ -72,7 +72,7 @@ const sideProjectsData = [
 const educationData = [
   {
     title: "Computer Science",
-    date: "2019 - 2022",
+    date: "april 2019 - april 2022",
     description: (
       <>
         <p>Universidad Nacional de San Agustín (UNSA) - Arequipa, Peru</p>
