@@ -3,7 +3,7 @@ import Icon from "../Icon.jsx";
 
 const workData = [
   {
-    title: "Backend Developer at NeoDev",
+    title: "Fullstack Developer at NeoDev",
     date: "february 2024 - present",
     description: (
       <>
@@ -132,12 +132,13 @@ export default function App() {
           </div>
 
           <p>
-            I worked in different projects for different companies as frontend
-            developer and backend developer for more than 3 years.
+            I am a professional with more than 3 years of experience. Throughout
+            my career, I have maintained and built multiple projects, including
+            online stores, banking platforms, and management systems.
           </p>
 
           <p>
-            As a person, I constantly trying to learn from my mistakes, not to
+            As a person, I'm constantly trying to learn from my mistakes, not to
             be perfect but to avoid being too flawed. In my free time, I like to
             develop tools to address my own needs and also love to compose
             music.
